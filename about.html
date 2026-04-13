@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="description" content="Learn about SHINELY LIMITED - a professional cleaning company with 10+ years of excellence, eco-friendly practices, and 100% customer satisfaction guarantee.">
+  <meta name="theme-color" content="#1e3a8a">
+  
+  <!-- Open Graph Meta Tags for Social Sharing -->
+  <meta property="og:title" content="About Us | SHINELY LIMITED Cleaning Services">
+  <meta property="og:description" content="Discover our mission, values, and commitment to professional cleaning excellence. many years of trusted service.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=1200&auto=format&fit=crop">
+  
+  <title>About Us | SHINELY LIMITED Cleaning Services</title>
+  
+  <!-- Font Awesome Icons (moved to head for better performance) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-DTOQO9RWCH3H7biwOiSoe5OwMcF0yu0YH5O8h6QFUo+yI+6D0K2ByJUqQO63nPJ8CAN0hMCVrgQQQm8+gB1sKA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  
+  <style>
+    :root {
+      --primary-blue: #1e3a8a;
+      --accent-red: #dc2626;
+      --light-blue: #f0f9ff;
+      --light-red: #fee2e2;
+      --white: #ffffff;
+      --bg-soft: #f8fafc;
+      --text-dark: #0f172a;
+      --text-muted: #64748b;
+      --border-light: #e2e8f0;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+      --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.12);
+      --radius: 16px;
+      --transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    /* Dark Mode Support */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-soft: #1a1a2e;
+        --white: #f5f5f5;
+        --text-dark: #e0e0e0;
+        --text-muted: #a0a0a0;
+        --border-light: #333333;
+      }
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+      color: var(--text-dark);
+      line-height: 1.7;
+      background: var(--bg-soft);
+      overflow-x: hidden;
+    }
+
+    body.no-scroll {
+      overflow: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    button, input, textarea, select {
+      font: inherit;
+      outline: none;
+    }
+
+    /* Layout */
+    .auto-frame {
+      width: 100%;
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      min-height: 100dvh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      padding: clamp(4rem, 10vw, 6rem) 0;
+    }
+
+    .grid {
+      display: grid;
+      gap: 2.5rem;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-light);
+      height: 72px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+
+    header.scrolled {
+      box-shadow: var(--shadow-md);
+      background: rgba(255, 255, 255, 0.98);
+    }
+
+    .header-inner {
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--primary-blue);
+      letter-spacing: -0.02em;
+    }
+
+    .logo span {
+      color: var(--accent-red);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 0.25rem;
+      align-items: center;
+    }
+
+    nav a {
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--primary-blue);
+      background: var(--light-blue);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 2.5px;
+      background: var(--text-dark);
+      transition: var(--transition);
+      border-radius: 2px;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(10px, 10px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 70vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--light-blue) 0%, var(--white) 50%, var(--light-red) 100%);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 50%, rgba(30, 58, 138, 0.05) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 80%, rgba(220, 38, 38, 0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      padding: 2rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 7vw, 4rem);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--primary-blue);
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      margin-bottom: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--primary-blue);
+    }
+
+    h3 {
+      font-size: clamp(1.2rem, 3vw, 1.5rem);
+      margin-bottom: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .subtitle {
+      font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary-blue);
+      font-weight: 700;
+      padding: 0.8rem 1.5rem;
+      border-radius: 10px;
+      background: var(--light-blue);
+      transition: var(--transition);
+    }
+
+    .back-link:hover {
+      background: var(--primary-blue);
+      color: var(--white);
+    }
+
+    /* Section Titles */
+    .section-title {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+
+    .section-title h2 {
+      margin-bottom: 1.2rem;
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    /* Intro Section */
+    .intro-grid {
+      grid-template-columns: 1fr 1.5fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .stat-box {
+      background: var(--white);
+      padding: 3rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      text-align: center;
+      border-top: 5px solid var(--primary-blue);
+      transition: var(--transition);
+    }
+
+    .stat-box:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .stat-box strong {
+      display: block;
+      font-size: 4rem;
+      color: var(--primary-blue);
+      line-height: 1;
+      margin-bottom: 0.8rem;
+      font-weight: 800;
+    }
+
+    .stat-box p {
+      font-weight: 700;
+      color: var(--text-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.9rem;
+    }
+
+    .intro-content h2 {
+      color: var(--accent-red);
+    }
+
+    .intro-content p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.9;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Values Grid */
+    .values-grid {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .value-card {
+      background: var(--white);
+      padding: 2.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .value-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary-blue);
+    }
+
+    .value-card:nth-child(even):hover {
+      border-color: var(--accent-red);
+    }
+
+    .value-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--light-blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      margin: 0 auto 1.5rem;
+      color: var(--primary-blue);
+      transition: var(--transition);
+    }
+
+    .value-card:nth-child(even) .value-icon {
+      background: var(--light-red);
+      color: var(--accent-red);
+    }
+
+    .value-card:hover .value-icon {
+      transform: scale(1.15);
+    }
+
+    .value-card h3 {
+      margin-bottom: 1rem;
+    }
+
+    .value-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Features Section */
+    .features-section {
+      background: var(--white);
+    }
+
+    .features-grid {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .feature-box {
+      background: var(--light-blue);
+      padding: 2.5rem;
+      border-radius: var(--radius);
+      border-left: 5px solid var(--primary-blue);
+      transition: var(--transition);
+    }
+
+    .feature-box:nth-child(even) {
+      background: var(--light-red);
+      border-left-color: var(--accent-red);
+    }
+
+    .feature-box:hover {
+      transform: translateX(8px);
+    }
+
+    .feature-box h3 {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .feature-box p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    /* Mission Section */
+    .mission-section {
+      background: linear-gradient(135deg, var(--primary-blue) 0%, #1e40af 100%);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .mission-section h2 {
+      color: var(--white);
+    }
+
+    .mission-stats {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 3rem;
+      margin-top: 4rem;
+    }
+
+    .mission-stat {
+      padding: 2rem;
+    }
+
+    .mission-stat strong {
+      display: block;
+      font-size: 3.5rem;
+      color: var(--accent-red);
+      margin-bottom: 0.8rem;
+      font-weight: 800;
+    }
+
+    .mission-stat p {
+      font-weight: 600;
+      opacity: 0.95;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.9rem;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, var(--light-blue) 0%, var(--light-red) 100%);
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      color: var(--primary-blue);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 2.5rem;
+      background: var(--primary-blue);
+      color: var(--white);
+      border-radius: 10px;
+      font-weight: 700;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      box-shadow: 0 4px 15px rgba(30, 58, 138, 0.2);
+      min-height: 48px;
+    }
+
+    .btn:hover {
+      background: #1e40af;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(30, 58, 138, 0.3);
+    }
+
+    .btn-red {
+      background: var(--accent-red);
+      box-shadow: 0 4px 15px rgba(220, 38, 38, 0.2);
+    }
+
+    .btn-red:hover {
+      background: #b91c1c;
+      box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--text-dark);
+      color: #cbd5e1;
+      padding: 4rem 0 2rem;
+      border-top: 3px solid var(--primary-blue);
+      margin-top: auto;
+    }
+
+    .footer-grid {
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-col h4 {
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+    }
+
+    .footer-col p {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-links a {
+      color: #94A3B8;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+      padding-left: 5px;
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid #334155;
+      font-size: 0.85rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .stat-box {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        height: 64px;
+      }
+
+      .container {
+        padding: 0 1.5rem;
+      }
+
+      .menu-toggle {
+        display: flex;
+        margin-left: auto;
+      }
+
+      nav ul {
+        position: fixed;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        flex-direction: column;
+        padding: 1.5rem;
+        box-shadow: var(--shadow-md);
+        display: none !important;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        z-index: 99;
+        gap: 0.75rem;
+      }
+
+      nav ul.open {
+        display: flex !important;
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .hero {
+        min-height: 60vh;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .stat-box {
+        padding: 2rem;
+      }
+
+      .stat-box strong {
+        font-size: 2.8rem;
+      }
+
+      .value-card, .feature-box {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="auto-frame">
+    <!-- Header with Corrected Navigation Structure -->
+    <header id="main-header">
+      <div class="container header-inner">
+        <a href="index.html" class="logo">
+         <!--SHINELY<span>.</span>--> 
+        <img src="images/brandlogo_bg.png" alt="SHINELY Logo" style="height: 50px; width: auto;">
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <!-- Single, properly structured nav element -->
+        <nav id="main-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="#contact" class="btn btn-red">Get a Quote</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main style="flex: 1;">
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-content">
+          <h1>About SHINELY Cleaning Services</h1>
+          <p class="subtitle">Your trusted partner in professional cleaning services, dedicated to transforming spaces and improving lives.</p>
+          <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+            Back to Home
+          </a>
+        </div>
+      </section>
+
+      <!-- Intro Section -->
+      <section>
+        <div class="container">
+          <div class="grid intro-grid">
+            <div class="stat-box">
+              <strong>Great</strong>
+              <p>Touch of Excellence</p>
+            </div>
+            <div class="intro-content">
+              <h2>Dedicated to Excellence & Your Satisfaction</h2>
+              <p>Shinely Cleaning Services is a professional cleaning company dedicated to delivering high-quality, reliable, and affordable cleaning solutions for homes and businesses.</p>
+              <p>We specialize in domestic cleaning, deep cleaning, end of tenancy, and Airbnb cleaning, ensuring every space is left spotless, fresh, and welcoming. Our goal is simple: to provide consistent, trustworthy service that gives our clients complete peace of mind.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Core Values -->
+      <section style="background: var(--bg-soft);">
+        <div class="container">
+          <div class="section-title">
+            <h2>Why Choose US?</h2>
+            <p>We stand out through our commitment to quality, reliability, and customer satisfaction.</p>
+          </div>
+          <div class="grid values-grid">
+            <div class="value-card">
+              <div class="value-icon"><i class="fas fa-shield-alt"></i></div>
+              <h3>Fully Insured</h3>
+              <p>Complete coverage for your property and peace of mind on every job we undertake.</p>
+            </div>
+            <div class="value-card">
+              <div class="value-icon"><i class="fas fa-leaf"></i></div>
+              <h3>Eco-Friendly</h3>
+              <p>We use safe, non-toxic cleaning products that are gentle on the planet and your family.</p>
+            </div>
+            <div class="value-card">
+              <div class="value-icon"><i class="fas fa-check-circle"></i></div>
+              <h3>100% Guarantee</h3>
+              <p>If you're not happy, we'll re-clean at no extra cost. Your satisfaction is our priority.</p>
+            </div>
+            <div class="value-card">
+              <div class="value-icon"><i class="fas fa-users"></i></div>
+              <h3>Vetted Team</h3>
+              <p>Our professionals are thoroughly background-checked, trained, and highly committed.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section class="features-section">
+        <div class="container">
+          <div class="section-title">
+            <h2>What Sets Us Apart</h2>
+            <p>Discover the key features that make Shinely Cleaning Services the preferred choice for professional cleaning.</p>
+          </div>
+          <div class="grid features-grid">
+            <div class="feature-box">
+              <h3><i class="fas fa-check"></i> Quality First</h3>
+              <p>We never compromise on quality. Every cleaning is done with meticulous attention to detail.</p>
+            </div>
+            <div class="feature-box">
+              <h3><i class="fas fa-clock"></i> Reliable Service</h3>
+              <p>We value your time. Our team arrives on schedule and completes jobs efficiently.</p>
+            </div>
+            <div class="feature-box">
+              <h3><i class="fas fa-comments"></i> Customer Care</h3>
+              <p>Your satisfaction is our priority. We listen and customize our services to your needs.</p>
+            </div>
+            <div class="feature-box">
+              <h3><i class="fas fa-money-bill"></i> Fair Pricing</h3>
+              <p>Transparent, competitive rates with no hidden fees. Quality cleaning that fits your budget.</p>
+            </div>
+            <div class="feature-box">
+              <h3><i class="fas fa-globe"></i> Eco-Conscious</h3>
+              <p>We use environmentally friendly products that are tough on dirt but gentle on the planet.</p>
+            </div>
+            <div class="feature-box">
+              <h3><i class="fas fa-star"></i> Expert Team</h3>
+              <p>Our professionals are trained, insured, and passionate about delivering exceptional results.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mission Section -->
+      <section class="mission-section">
+        <div class="container">
+          <h2>Our Mission & Vision</h2>
+          <p class="subtitle" style="color: rgba(255, 255, 255, 0.9);">We're committed to transforming spaces and improving lives through exceptional cleaning services.</p>
+          <div class="grid mission-stats">
+            <div class="mission-stat">
+              <strong>500+</strong>
+              <p>Happy Clients</p>
+            </div>
+            <div class="mission-stat">
+              <strong>Great</strong>
+              <p>Touch of Excellence</p>
+            </div>
+            <div class="mission-stat">
+              <strong>100%</strong>
+              <p>Satisfaction Rate</p>
+            </div>
+            <div class="mission-stat">
+              <strong>24/7</strong>
+              <p>Support Available</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section">
+        <div class="container">
+          <h2>Ready to Experience the SHINELY Difference?</h2>
+          <p class="subtitle">Join hundreds of satisfied clients who trust us to keep their spaces spotless. Get your free, no-obligation quote today!</p>
+          <a href="#contact" class="btn btn-red">Get Your Free Quote Now</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="grid footer-grid">
+          <div class="footer-col">
+            <h4>SHINELY Cleaning Services</h4>
+            <p>Professional cleaning services dedicated to making your spaces spotless, fresh, and welcoming. Your satisfaction is our priority.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#services">Services</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="#contact">Get a Quote</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Services</h4>
+            <ul class="footer-links">
+              <li><a href="index.html#services">Domestic Cleaning</a></li>
+              <li><a href="index.html#services">Deep Cleaning</a></li>
+              <li><a href="index.html#services">End of Tenancy</a></li>
+              <li><a href="index.html#services">Airbnb Cleaning</a></li>
+              <li><a href="index.html#services">Commercial</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <p><i class="fas fa-envelope"></i> info@shinelylimited.com</p>
+            <p><i class="fas fa-phone"></i> 074 326 42168 </p>
+            <p><i class="fas fa-map-marker-alt"></i> Cardiff, United Kingdom </p>
+          </div>
+        </div>
+        <p class="copyright">© 2024 SHINELY LIMITED. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Enhanced JavaScript with Improvements -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const mainNav = document.querySelector('nav ul');
+      const header = document.getElementById('main-header');
+
+      // Mobile Menu Toggle with Hamburger Animation
+      if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', () => {
+          const isOpen = mainNav.classList.toggle('open');
+          menuToggle.classList.toggle('active', isOpen);
+          menuToggle.setAttribute('aria-expanded', isOpen);
+          document.body.classList.toggle('no-scroll', isOpen);
+        });
+
+        // Close menu when a link is clicked
+        mainNav.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mainNav.classList.remove('open');
+            menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            document.body.classList.remove('no-scroll');
+          });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!header.contains(e.target) && mainNav.classList.contains('open')) {
+            mainNav.classList.remove('open');
+            menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            document.body.classList.remove('no-scroll');
+          }
+        });
+
+        // Close menu on window resize (if resized to desktop)
+        window.addEventListener('resize', () => {
+          if (window.innerWidth > 768 && mainNav.classList.contains('open')) {
+            mainNav.classList.remove('open');
+            menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            document.body.classList.remove('no-scroll');
+          }
+        });
+      }
+
+      // Header Scroll Effect
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+
+      // Smooth Scroll Offset for Sticky Header
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const href = this.getAttribute('href');
+          if (href !== '#' && document.querySelector(href)) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            const headerHeight = header.offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight - 20;
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

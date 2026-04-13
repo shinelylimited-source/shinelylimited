@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="description" content="SHINELY LIMITED provides professional cleaning services for homes and businesses. Domestic cleaning, deep cleaning, end of tenancy, Airbnb cleaning, office and warehouse services.">
+  <meta name="theme-color" content="#1e3a8a">
+  
+  <!-- Open Graph Meta Tags for Social Sharing -->
+  <meta property="og:title" content="SHINELY LIMITED | Professional Cleaning Services">
+  <meta property="og:description" content="Professional cleaning services you can trust. Exceptional, reliable, and affordable solutions for homes and businesses.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=1200&auto=format&fit=crop">
+  
+  <title>SHINELY LIMITED | Professional Cleaning Services</title>
+  
+  <!-- Font Awesome Icons (moved to head for better performance) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-DTOQO9RWCH3H7biwOiSoe5OwMcF0yu0YH5O8h6QFUo+yI+6D0K2ByJUqQO63nPJ8CAN0hMCVrgQQQm8+gB1sKA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  
+  <style>
+    :root {
+      --primary-blue: #1e3a8a;
+      --accent-red: #dc2626;
+      --light-blue: #f0f9ff;
+      --light-red: #fee2e2;
+      --white: #ffffff;
+      --bg-soft: #f8fafc;
+      --text-dark: #0f172a;
+      --text-muted: #64748b;
+      --border-light: #e2e8f0;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+      --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.12);
+      --radius: 16px;
+      --transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    /* Dark Mode Support */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-soft: #1a1a2e;
+        --white: #f5f5f5;
+        --text-dark: #e0e0e0;
+        --text-muted: #a0a0a0;
+        --border-light: #333333;
+      }
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+      color: var(--text-dark);
+      line-height: 1.7;
+      background: var(--bg-soft);
+      overflow-x: hidden;
+    }
+
+    body.no-scroll {
+      overflow: hidden;
+    }
+
+    img, video {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    button, input, textarea, select {
+      font: inherit;
+      outline: none;
+    }
+
+    /* Layout */
+    .auto-frame {
+      width: 100%;
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      min-height: 100dvh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      padding: clamp(4rem, 10vw, 6rem) 0;
+    }
+
+    .grid {
+      display: grid;
+      gap: 2.5rem;
+    }
+
+    .flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-light);
+      height: 72px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+
+    header.scrolled {
+      box-shadow: var(--shadow-md);
+      background: rgba(255, 255, 255, 0.98);
+    }
+
+    .header-inner {
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--primary-blue);
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo img {
+      height: 50px;
+      width: auto;
+    }
+
+    .logo span {
+      color: var(--accent-red);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 0.25rem;
+      align-items: center;
+    }
+
+    nav a {
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    nav a:hover {
+      color: var(--primary-blue);
+      background: var(--light-blue);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 2.5px;
+      background: var(--text-dark);
+      transition: var(--transition);
+      border-radius: 2px;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(10px, 10px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 85vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--light-blue) 0%, var(--white) 50%, var(--light-red) 100%);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 50%, rgba(30, 58, 138, 0.05) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 80%, rgba(220, 38, 38, 0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      padding: 2rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 7vw, 4.5rem);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--primary-blue);
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      margin-bottom: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--primary-blue);
+    }
+
+    h3 {
+      font-size: clamp(1.2rem, 3vw, 1.5rem);
+      margin-bottom: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .subtitle {
+      font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero .flex {
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 2.5rem;
+      background: var(--primary-blue);
+      color: var(--white);
+      border-radius: 10px;
+      font-weight: 700;
+      min-height: 48px;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      box-shadow: 0 4px 15px rgba(30, 58, 138, 0.2);
+    }
+
+    .btn:hover {
+      background: #1e40af;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(30, 58, 138, 0.3);
+    }
+
+    .btn-red {
+      background: var(--accent-red);
+      box-shadow: 0 4px 15px rgba(220, 38, 38, 0.2);
+    }
+
+    .btn-red:hover {
+      background: #b91c1c;
+      box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2.5px solid var(--primary-blue);
+      color: var(--primary-blue);
+      box-shadow: none;
+    }
+
+    .btn-outline:hover {
+      background: var(--primary-blue);
+      color: var(--white);
+    }
+
+    /* Section Titles */
+    .section-title {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+
+    .section-title h2 {
+      margin-bottom: 1.2rem;
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    /* Services Grid */
+    .services-grid {
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      padding: 2.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--primary-blue);
+      transition: var(--transition);
+    }
+
+    .service-card:nth-child(even)::before {
+      background: var(--accent-red);
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary-blue);
+    }
+
+    .service-card:nth-child(even):hover {
+      border-color: var(--accent-red);
+    }
+
+    .service-icon {
+      width: 70px;
+      height: 70px;
+      background: var(--light-blue);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary-blue);
+      transition: var(--transition);
+    }
+
+    .service-card:nth-child(even) .service-icon {
+      background: var(--light-red);
+      color: var(--accent-red);
+    }
+
+    .service-card:hover .service-icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    .service-card h3 {
+      margin-bottom: 1rem;
+    }
+
+    .service-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+
+    /* About Section */
+    .about-section {
+      background: var(--white);
+    }
+
+    .about-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-image {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-light);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: auto;
+    }
+
+    .about-content h2 {
+      color: var(--accent-red);
+      margin-bottom: 1.5rem;
+    }
+
+    .about-content p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.9;
+      font-size: 1rem;
+    }
+
+    .features-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+      padding: 1.5rem;
+      background: var(--light-blue);
+      border-radius: 12px;
+      border-left: 4px solid var(--primary-blue);
+      transition: var(--transition);
+    }
+
+    .feature-item:nth-child(even) {
+      background: var(--light-red);
+      border-left-color: var(--accent-red);
+    }
+
+    .feature-item:hover {
+      transform: translateX(8px);
+    }
+
+    .feature-item .icon {
+      font-size: 1.8rem;
+      flex-shrink: 0;
+    }
+
+    .feature-item p {
+      font-weight: 600;
+      color: var(--text-dark);
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    /* Gallery Section */
+    .gallery-section {
+      background: var(--bg-soft);
+    }
+
+    .gallery-grid {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .gallery-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      border: 1px solid var(--border-light);
+      aspect-ratio: 1;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(30, 58, 138, 0.95));
+      color: var(--white);
+      padding: 2.5rem 1.5rem 1.5rem;
+      transform: translateY(30px);
+      transition: var(--transition);
+      opacity: 0;
+    }
+
+    .gallery-item:hover .gallery-caption {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .gallery-caption h3 {
+      color: var(--white);
+      margin-bottom: 0;
+      font-size: 1.1rem;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background: var(--white);
+    }
+
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 0;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-light);
+    }
+
+    .contact-info {
+      background: var(--primary-blue);
+      color: var(--white);
+      padding: 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .contact-info h3 {
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+    }
+
+    .contact-info p {
+      margin-bottom: 2.5rem;
+      line-height: 1.9;
+      opacity: 0.95;
+      font-size: 1rem;
+    }
+
+    .contact-list {
+      list-style: none;
+    }
+
+    .contact-item {
+      margin-bottom: 2.5rem;
+      display: flex;
+      gap: 1.2rem;
+    }
+
+    .contact-item i {
+      font-size: 1.5rem;
+      color: var(--accent-red);
+      flex-shrink: 0;
+    }
+
+    .contact-item-text strong {
+      display: block;
+      font-size: 0.95rem;
+      margin-bottom: 0.3rem;
+      font-weight: 700;
+    }
+
+    .contact-item-text p {
+      margin: 0;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .contact-form {
+      padding: 4rem;
+      background: var(--white);
+    }
+
+    .contact-form h3 {
+      margin-bottom: 2.5rem;
+      color: var(--text-dark);
+      font-size: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.6rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 1rem;
+      border: 1.5px solid var(--border-light);
+      border-radius: 10px;
+      background: var(--white);
+      min-height: 48px;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--primary-blue);
+      box-shadow: 0 0 0 4px rgba(30, 58, 138, 0.1);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 130px;
+    }
+
+    .form-error {
+      color: var(--accent-red);
+      font-size: 0.85rem;
+      margin-top: 0.3rem;
+      display: none;
+    }
+
+    .form-error.show {
+      display: block;
+    }
+
+    .form-success {
+      background: #dcfce7;
+      color: #166534;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      display: none;
+    }
+
+    .form-success.show {
+      display: block;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--text-dark);
+      color: #cbd5e1;
+      padding: 4rem 0 2rem;
+      border-top: 3px solid var(--primary-blue);
+      margin-top: auto;
+    }
+
+    .footer-grid {
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-col h4 {
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+    }
+
+    .footer-col p {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-links a {
+      color: #94A3B8;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+      padding-left: 5px;
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid #334155;
+      font-size: 0.85rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .about-wrapper {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-info, .contact-form {
+        padding: 3rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        height: 64px;
+      }
+
+      .container {
+        padding: 0 1.5rem;
+      }
+
+      .menu-toggle {
+        display: flex;
+        margin-left: auto;
+      }
+
+      nav ul {
+        position: fixed;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        flex-direction: column;
+        padding: 1.5rem;
+        box-shadow: var(--shadow-md);
+        display: none !important;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        z-index: 99;
+        gap: 0.75rem;
+      }
+
+      nav ul.open {
+        display: flex !important;
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .hero {
+        min-height: 70vh;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .subtitle {
+        font-size: 1rem;
+      }
+
+      .service-card, .contact-form, .contact-info {
+        padding: 1.5rem;
+      }
+
+      .contact-info, .contact-form {
+        padding: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="auto-frame">
+    <!-- Header with Corrected Navigation Structure -->
+    <header id="main-header">
+      <div class="container header-inner">
+        <a href="index.html" class="logo">
+          <img src="images/brandlogo_bg.png" alt="SHINELY Logo" style="height: 50px; width: auto;">
+          <span>🧹</span>
+          
+        </a>
+        <button class="menu-toggle" aria-label="Toggle menu" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <!-- Single, properly structured nav element -->
+        <nav id="main-nav">
+          <ul>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html#gallery">Gallery</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="quote.html" class="btn btn-red">Get a Quote</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main style="flex: 1;">
+      <!-- Hero Section -->
+      <section id="home" class="hero">
+        <div class="hero-content">
+          <h1>Professional Cleaning Services You Can Trust</h1>
+          <p class="subtitle">Shinely Cleaning Services delivers exceptional, reliable, and affordable cleaning solutions for homes and businesses. Experience the difference with our dedicated team.</p>
+          <div class="flex">
+            <a href="quote.html" class="btn btn-red">Get Free Quote</a>
+            <a href="#services" class="btn btn-outline">Explore Services</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services">
+        <div class="container">
+          <div class="section-title">
+            <h2>Our Cleaning Services</h2>
+            <p>Comprehensive solutions tailored to meet your unique cleaning needs</p>
+          </div>
+          <div class="grid services-grid">
+            <div class="service-card">
+              <div class="service-icon"><i class="fas fa-sparkles"></i> ✨</div>
+              <h3>Domestic Cleaning</h3>
+              <p>Regular home cleaning services to keep your living space fresh, clean, and welcoming for you and your family.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon"><i class="fas fa-water"></i> 💧</div>
+              <h3>Deep Cleaning</h3>
+              <p>Thorough intensive cleaning that reaches every corner, ensuring a completely sanitized and refreshed environment.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon"><i class="fas fa-door-open"></i> 🚪</div>
+              <h3>End of Tenancy</h3>
+              <p>Complete move-in/move-out cleaning to ensure you get your deposit back or walk into a spotless new home.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon"><i class="fas fa-calendar-check"></i> 📅</div>
+              <h3>Airbnb Cleaning</h3>
+              <p>Fast turnaround cleaning for short-term rentals, ensuring your property is always guest-ready and impressive.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon"><i class="fas fa-briefcase"></i> 💼</div>
+              <h3>Office Cleaning</h3>
+              <p>Professional commercial cleaning to maintain a pristine, productive workspace for your team and clients.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon"><i class="fas fa-industry"></i> 🏡✨</div>
+              <h3>Post Construction Cleaning</h3>
+              <p>Thorough post‑construction cleaning that makes your newly built home safe, spotless, and ready to welcome you in</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="about-section">
+        <div class="container">
+          <div class="about-wrapper">
+            <div class="about-image">
+              <img src="images/cleaning-cart.jpg" alt="Professional Cleaning Team" loading="lazy">
+            </div>
+            <div class="about-content">
+              <h2>Dedicated to Excellence & Your Satisfaction</h2>
+              <p>SHINELY Cleaning Services is a professional cleaning company dedicated to delivering high-quality, reliable, and affordable cleaning solutions for homes and businesses.</p>
+              <p>We specialize in domestic cleaning, deep cleaning, end of tenancy, and Airbnb cleaning, ensuring every space is left spotless, fresh, and welcoming. Our goal is simple: to provide consistent, professional service that exceeds expectations.</p>
+              <div class="features-grid">
+                <div class="feature-item">
+                  <span class="icon">⭐</span>
+                  <p>Premium Quality Service</p>
+                </div>
+                <div class="feature-item">
+                  <span class="icon">🛡️</span>
+                  <p>Fully Insured & Bonded</p>
+                </div>
+                <div class="feature-item">
+                  <span class="icon">🌿</span>
+                  <p>Eco-Friendly Products</p>
+                </div>
+                <div class="feature-item">
+                  <span class="icon">✅</span>
+                  <p>100% Satisfaction</p>
+                </div>
+                <div class="feature-item">
+                  <span class="icon">👥</span>
+                  <p>Trained Professionals</p>
+                </div>
+                <div class="feature-item">
+                  <span class="icon">⚡</span>
+                  <p>Fast & Reliable</p>
+                </div>
+              </div>
+              <a href="about.html" class="btn btn-red">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery Section -->
+      <section id="gallery" class="gallery-section">
+        <div class="container">
+          <div class="section-title">
+            <h2>Our Recent Work</h2>
+            <p>See the transformation we bring to every space</p>
+          </div>
+          <div class="grid gallery-grid">
+            <div class="gallery-item">
+              <img src="images/bathroom.jpg" alt="Bathroom Deep Clean" loading="lazy">
+              <div class="gallery-caption"><h3>Bathroom Deep Clean</h3></div>
+            </div>
+            <div class="gallery-item">
+              <img src="images/lounge.jpg" alt="Living Room Refresh" loading="lazy">
+              <div class="gallery-caption"><h3>Living Room Refresh</h3></div>
+            </div>
+            <div class="gallery-item">
+              <img src="images/kitchen.jpg" alt="Kitchen Sanitization" loading="lazy">
+              <div class="gallery-caption"><h3>Kitchen Sanitization</h3></div>
+            </div>
+            <div class="gallery-item">
+              <img src="images/office.jpg" alt="Office Transformation" loading="lazy">
+              <div class="gallery-caption"><h3>Office Transformation</h3></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact-section">
+        <div class="container">
+          <div class="section-title">
+            <h2>Get In Touch</h2>
+            <p>Ready to experience the SHINELY difference? Contact us today!</p>
+          </div>
+          <div class="contact-wrapper">
+            <div class="contact-info">
+              <h3>Let's Discuss Your Needs</h3>
+              <p>Whether you need regular home cleaning, a one-time deep clean, or commercial services, we're here to help. Get your free quote today!</p>
+              <ul class="contact-list">
+                <li class="contact-item">
+                  <i class="fas fa-envelope"></i>
+                  <div class="contact-item-text">
+                    <strong>Email</strong>
+                    <p>info@shinelylimited.com</p>
+                  </div>
+                </li>
+                <li class="contact-item">
+                  <i class="fas fa-phone"></i>
+                  <div class="contact-item-text">
+                    <strong>Phone</strong>
+                    <p>074 3264 2168</p>
+                  </div>
+                </li>
+                <li class="contact-item">
+                  <i class="fas fa-clock"></i>
+                  <div class="contact-item-text">
+                    <strong>Hours</strong>
+                    <p>Mon - Sat: 8:00 AM - 6:00 PM</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="contact-form">
+              <h3>Send us a Message</h3>
+              <div class="form-success" id="formSuccess">
+                <strong>✓ Success!</strong> Thank you for your message. We'll get back to you within 24 hours.
+              </div>
+              <form id="contactForm">
+                <div class="form-group">
+                  <label for="name">Full Name <span style="color: var(--accent-red);">*</span></label>
+                  <input type="text" id="name" name="name" required placeholder="Your name">
+                  <div class="form-error" id="nameError">Please enter your full name</div>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address <span style="color: var(--accent-red);">*</span></label>
+                  <input type="email" id="email" name="email" required placeholder="Your email">
+                  <div class="form-error" id="emailError">Please enter a valid email address</div>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" placeholder="Your phone">
+                  <div class="form-error" id="phoneError">Please enter a valid phone number</div>
+                </div>
+                <div class="form-group">
+                  <label for="message">Message <span style="color: var(--accent-red);">*</span></label>
+                  <textarea id="message" name="message" required placeholder="Your message"></textarea>
+                  <div class="form-error" id="messageError">Please enter your message</div>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="grid footer-grid">
+          <div class="footer-col">
+            <h4>Shinely Cleaning Services</h4>
+            <p>Professional cleaning services dedicated to making your spaces spotless, fresh, and welcoming. Your satisfaction is our priority.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="index.html#home">Home</a></li>
+              <li><a href="index.html#services">Services</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="index.html#gallery">Gallery</a></li>
+              <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Services</h4>
+            <ul class="footer-links">
+              <li><a href="index.html#services">Domestic Cleaning</a></li>
+              <li><a href="index.html#services">Deep Cleaning</a></li>
+              <li><a href="index.html#services">End of Tenancy</a></li>
+              <li><a href="index.html#services">Airbnb Cleaning</a></li>
+              <li><a href="index.html#services">Commercial</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <p><i class="fas fa-envelope"></i> info@shinelylimited.com</p>
+            <p><i class="fas fa-phone"></i> 074 3264 2168</p>
+            <p><i class="fas fa-map-marker-alt"></i> Cardiff, United Kingdom</p>
+          </div>
+        </div>
+        <p class="copyright">© 2024 SHINELY LIMITED. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Enhanced JavaScript with Improvements -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const mainNav = document.querySelector('nav ul');
+      const header = document.getElementById('main-header');
+      const contactForm = document.getElementById('contactForm');
+      const formSuccess = document.getElementById('formSuccess');
+
+      // Mobile Menu Toggle with Hamburger Animation
+      if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', () => {
+          const isOpen = mainNav.classList.toggle('open');
+          menuToggle.classList.toggle('active', isOpen);
+          menuToggle.setAttribute('aria-expanded', isOpen);
+          document.body.classList.toggle('no-scroll', isOpen);
+        });
+
+        // Close menu when a link is clicked
+        mainNav.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mainNav.classList.remove('open');
+            menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            document.body.classList.remove('no-scroll');
+          });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!header.contains(e.target) && mainNav.classList.contains('open')) {
+            mainNav.classList.remove('open');
+            menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            document.body.classList.remove('no-scroll');
+          }
+        });
+
+        // Close menu on window resize (if resized to desktop)
+        window.addEventListener('resize', () => {
+          if (window.innerWidth > 768 && mainNav.classList.contains('open')) {
+            mainNav.classList.remove('open');
+            menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            document.body.classList.remove('no-scroll');
+          }
+        });
+      }
+
+      // Header Scroll Effect
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+
+      // Smooth Scroll Offset for Sticky Header
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const href = this.getAttribute('href');
+          if (href !== '#' && document.querySelector(href)) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            const headerHeight = header.offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight - 20;
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+      // Form Validation and Submission
+      if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          // Get form values
+          const name = document.getElementById('name').value.trim();
+          const email = document.getElementById('email').value.trim();
+          const phone = document.getElementById('phone').value.trim();
+          const message = document.getElementById('message').value.trim();
+
+          // Reset error messages
+          document.querySelectorAll('.form-error').forEach(error => {
+            error.classList.remove('show');
+          });
+          formSuccess.classList.remove('show');
+
+          // Validation
+          let isValid = true;
+
+          if (!name) {
+            document.getElementById('nameError').classList.add('show');
+            isValid = false;
+          }
+
+          if (!email || !isValidEmail(email)) {
+            document.getElementById('emailError').classList.add('show');
+            isValid = false;
+          }
+
+          if (phone && !isValidPhone(phone)) {
+            document.getElementById('phoneError').classList.add('show');
+            isValid = false;
+          }
+
+          if (!message) {
+            document.getElementById('messageError').classList.add('show');
+            isValid = false;
+          }
+
+          // If valid, send to Google Apps Script
+          if (isValid) {
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.textContent;
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+
+            const formData = {
+              name: name,
+              email: email,
+              phone: phone,
+              message: message
+            };
+
+            const CONTACT_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwA73LwbSNFSq9P9S-KfQTfz8jwLVpOos5iXHXIakMHx6NWsrTxwAfWB0Bezxq8gKjp/exec';
+
+            if (CONTACT_APPS_SCRIPT_URL === 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
+              alert('Error: The Google Apps Script URL has not been configured. Please replace the placeholder in index.html with your actual Web App URL.');
+              submitButton.textContent = originalButtonText;
+              submitButton.disabled = false;
+              return;
+            }
+
+            console.log('Sending contact form data to:', CONTACT_APPS_SCRIPT_URL);
+            console.log('Form data:', formData);
+
+            fetch(CONTACT_APPS_SCRIPT_URL, {
+              method: 'POST',
+              body: JSON.stringify(formData)
+            })
+            .then(response => {
+              console.log('Response status:', response.status);
+              if (!response.ok) {
+                throw new Error('HTTP error, status = ' + response.status);
+              }
+              return response.json();
+            })
+            .then(data => {
+              console.log('Response data:', data);
+              if (data.status === 'success') {
+                formSuccess.classList.add('show');
+                contactForm.reset();
+                formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+              } else {
+                alert('Error: ' + (data.message || 'Unknown error occurred'));
+              }
+            })
+            .catch(error => {
+              console.error('Detailed error:', error);
+              console.error('Error message:', error.message);
+              alert('An error occurred while sending your message. Please check the browser console for more details. Error: ' + error.message);
+            })
+            .finally(() => {
+              submitButton.textContent = originalButtonText;
+              submitButton.disabled = false;
+             });
+          }
+        });
+      }
+
+      // Email validation helper
+      function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+      }
+
+      // Phone validation helper
+      function isValidPhone(phone) {
+        const phoneRegex = /^[\d\s\-\+\(\)]+$/.test(phone) && phone.replace(/\D/g, '').length >= 10;
+        return phoneRegex;
+      }
+
+      // Lazy loading for images (fallback for older browsers)
+      if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              img.src = img.dataset.src || img.src;
+              observer.unobserve(img);
+            }
+          });
+        });
+
+        document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+          imageObserver.observe(img);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
